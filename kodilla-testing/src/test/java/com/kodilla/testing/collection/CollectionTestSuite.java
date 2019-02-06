@@ -15,15 +15,20 @@ public class CollectionTestSuite {
     }
     @Test
     public void testOddNumbersExterminatorEmptyList(){
+        //Given
         ArrayList<Integer> emptyLibrary = new ArrayList<Integer>();
         System.out.println(emptyLibrary);
+        //When
         OddNumbersExterminator tester1 = new OddNumbersExterminator();
-        System.out.println(tester1.exterminate(emptyLibrary));
-        Assert.assertEquals(emptyLibrary,tester1.exterminate(emptyLibrary));
+        ArrayList<Integer> resultEmptyList = tester1.exterminate(emptyLibrary);
+        System.out.println(resultEmptyList);
+        //Then
+        Assert.assertEquals(emptyLibrary,resultEmptyList);
 
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
+        //Given
         ArrayList<Integer> filledLibrary = new ArrayList<Integer>();
         filledLibrary.add(1);
         filledLibrary.add(3);
@@ -40,8 +45,11 @@ public class CollectionTestSuite {
         filledLibraryEven.add(8);
 
         System.out.println(filledLibrary);
+        //When
         OddNumbersExterminator tester = new OddNumbersExterminator();
-        System.out.println(tester.exterminate(filledLibrary));
-        Assert.assertEquals(filledLibraryEven,tester.exterminate(filledLibrary));
+        ArrayList<Integer> resultNormalList = tester.exterminate(filledLibrary);
+        System.out.println(resultNormalList);
+        //Then
+        Assert.assertEquals(filledLibraryEven,resultNormalList);
     }
 }
