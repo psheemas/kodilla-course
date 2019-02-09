@@ -23,8 +23,8 @@ public class ShapeCollectorTestSuite {
     public void testAddFigure(){
         //Given
         Shape circle = new Circle(12.3);
-        //When
         ShapeCollector sc = new ShapeCollector();
+        //When
         sc.addFigure(circle);
         //Then
         Assert.assertEquals(circle, sc.getFigure(0));
@@ -34,8 +34,8 @@ public class ShapeCollectorTestSuite {
         //Given
         Shape circle = new Circle(12.3);
         Shape square = new Square(12.3);
-        //When
         ShapeCollector sc = new ShapeCollector();
+        //When
         sc.addFigure(circle);
         sc.addFigure(square);
         sc.removeFigure(circle);
@@ -47,8 +47,8 @@ public class ShapeCollectorTestSuite {
         //Given
         Shape circle = new Circle(12.3);
         Shape square = new Square(12.3);
-        //When
         ShapeCollector sc = new ShapeCollector();
+        //When
         sc.addFigure(circle);
         sc.addFigure(square);
         //Then
