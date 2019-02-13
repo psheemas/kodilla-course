@@ -5,6 +5,7 @@ import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import java.util.*;
 
 public class StreamMain {
         public static void main(String[] args) {
@@ -25,7 +26,7 @@ public class StreamMain {
             PoemBeautifier poemBeautifier = new PoemBeautifier();
             poemBeautifier.beautify("decorate",(decoratePoem -> "ABC"+decoratePoem+"ABC"));
             poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.toUpperCase()));
-            poemBeautifier.beautify("decorate",(decoratePoem -> new StringBuilder(decoratePoem).reverse().toString()));
+            poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0               ")));
             poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0 ")));
         }
 }
