@@ -24,9 +24,9 @@ public class StreamMain {
             expressionExecutor.executeExpression(3,4, FunctionalCalculator::divideAByB);
 
             PoemBeautifier poemBeautifier = new PoemBeautifier();
-            poemBeautifier.beautify("decorate",(decoratePoem -> "ABC"+decoratePoem+"ABC"));
-            poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.toUpperCase()));
-            poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0               ")));
-            poemBeautifier.beautify("decorate",(decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0 ")));
+            poemBeautifier.beautify("decorate", decoratePoem -> "ABC" + decoratePoem + "ABC");
+            poemBeautifier.beautify("decorate", decoratePoem -> decoratePoem.toUpperCase());
+            poemBeautifier.beautify("decorate", decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0                    "));
+            poemBeautifier.beautify("decorate", decoratePoem -> decoratePoem.replaceAll(".(?!$)", "$0 "));
         }
 }
