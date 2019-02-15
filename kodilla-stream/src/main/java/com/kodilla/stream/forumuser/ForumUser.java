@@ -47,4 +47,28 @@ public final class ForumUser {
                 ", publishedPosts=" + publishedPosts +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ForumUser forumUser = (ForumUser) o;
+
+        if (userOwnNumber != forumUser.userOwnNumber) return false;
+        if (sex != forumUser.sex) return false;
+        if (publishedPosts != forumUser.publishedPosts) return false;
+        if (userName != null ? !userName.equals(forumUser.userName) : forumUser.userName != null) return false;
+        return birthDate != null ? birthDate.equals(forumUser.birthDate) : forumUser.birthDate == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = userOwnNumber;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (int) sex;
+        result = 31 * result + (birthDate != null ? birthDate.hashCode() : 0);
+        result = 31 * result + publishedPosts;
+        return result;
+    }
 }
