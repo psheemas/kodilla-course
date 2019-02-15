@@ -2,12 +2,27 @@ package com.kodilla.stream.forum;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public final class ForumUser {
     private final String username;
     private final String realName;
     private final String location;
     private final Set<ForumUser> friends = new HashSet<>();
+
+    public Set<String> getLocationOfFriends(){
+        return friends.stream()
+                .map(friend->friend.getLocation())
+                .collect(Collectors.toSet());
+    }
+
+    public Set<String> getLocationsOfFriendsOfFriends() {
+        return friends.stream()
+                .flatMap(user -> user.getFriends().stream())
+                .filter(user -> user != this)
+                .map(ForumUser::getLocation)
+                .collect(Collectors.toSet());
+    }
 
     public ForumUser(final String username, final String realName,
                      final String location) {

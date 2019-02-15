@@ -14,15 +14,12 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
 
-        Forum theForumUserList = new Forum();
-        Map<Integer, ForumUser> theResultForumUserList = theForumUserList.getForumUserList().stream()
+        new Forum().getForumUserList().stream()
                 .filter(forumUser -> forumUser.getSex()=='M')
                 .filter(forumUser -> forumUser.getPublishedPosts()>1)
                 .filter(forumUser -> Period.between(forumUser.getBirthDate(), LocalDate.now()).getYears()>=20)
-                .collect(Collectors.toMap(ForumUser::getUserOwnNumber, forumUser -> forumUser));
-
-        theResultForumUserList.entrySet().stream()
-                .map(entry -> entry.getKey() + " : " + entry.getValue())
-                .forEach(System.out::println);
+                .collect(Collectors.toMap(ForumUser::getUserOwnNumber, forumUser -> forumUser)).entrySet().stream()
+                    .map(entry-> entry.getKey() + " : " + entry.getValue())
+                    .forEach(System.out::println);
     }
 }
