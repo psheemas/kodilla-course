@@ -16,7 +16,7 @@ public final class Continent {
         return continentName;
     }
 
-    public Set<Country> getContinentList() {
+    public Set<Country> getContinents() {
         return continentList;
     }
 
@@ -42,11 +42,4 @@ public final class Continent {
         result = 31 * result + (continentList != null ? continentList.hashCode() : 0);
         return result;
     }
-    public Set<String> getCountryListFromContinent(){
-        return continentList.stream()
-                .map(coun->coun.getCountry())
-                .collect(Collectors.toSet());
-
-    }
-
 }
