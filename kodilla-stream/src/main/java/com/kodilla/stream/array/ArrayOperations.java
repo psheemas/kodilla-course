@@ -7,7 +7,7 @@ public interface ArrayOperations{
     static double getAverage(int[] numbers){
         if (numbers==null){
             System.out.println("error");
-            return -1;
+            return 0;
         }else{
             System.out.println("Numbers are: ");
             IntStream.range(0, numbers.length)
