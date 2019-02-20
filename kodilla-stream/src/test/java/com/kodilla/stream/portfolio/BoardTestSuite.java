@@ -152,7 +152,7 @@ public class BoardTestSuite {
                 .flatMap(tl->tl.getTasks().stream())
                 .map(t->DAYS.between(t.getCreated(), LocalDate.now()))
                 .mapToDouble(n->n)
-                .average().getAsDouble();
+                .average().orElse(Double.NaN);
 
         //Then
         Assert.assertEquals(10.0,average,0.1);
