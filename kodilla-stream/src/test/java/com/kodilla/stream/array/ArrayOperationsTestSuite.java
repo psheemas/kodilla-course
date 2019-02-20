@@ -8,7 +8,7 @@ public class ArrayOperationsTestSuite {
 
     @Test
     public void testGetAverage(){
-        int[] numbers = null;
+        int[] numbers = {};
         Assert.assertEquals(36.45,ArrayOperations.getAverage(numbers),0.1);
     }
 }
