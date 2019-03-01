@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class UserInputScreen {
     public Scanner scanner = new Scanner(System.in);
 
-    public String MainMenuScreen(){
+    public String MainMenuScreen() {
             System.out.println("Hello in Rock Paper Scissors Lizard Spock!");
             System.out.println("Your name please: ");
             String playerName = scanner.nextLine();
+        while(playerName.length()<3 || playerName.isEmpty()){
+            System.out.println("Player name is to short ( at least 3 char ) or empty, please enter it again");
+            playerName = scanner.nextLine();
+        }
             return playerName;
     }
-
     public UserSelection OptionsScreen() {
         while (true) {
             System.out.println("Key [1] - Rock");
@@ -50,8 +53,15 @@ public class UserInputScreen {
         System.out.println(" ");
     }
     public int NumberOfRounds(){
-                System.out.println("Enter number of rounds: ");
-                int numberOfRounds = scanner.nextInt();
-                return numberOfRounds;
+        while(true){
+            System.out.println("Enter number of rounds: ");
+            String numberOfRounds = scanner.nextLine();
+            try{
+                int result=Integer.parseInt(numberOfRounds);
+                return result;
+            }catch(Exception e){
+                System.out.println("Wrong number, enter value again!");
+            }
+        }
     }
 }

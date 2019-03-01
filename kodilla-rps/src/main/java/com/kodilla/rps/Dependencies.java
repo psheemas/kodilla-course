@@ -62,11 +62,9 @@ public class Dependencies {
         whoWinsMap.put(UserSelection.SPOCK,spockMap);
 
     }
-
     public Winner whoWin(UserSelection userImput,UserSelection computerImput){
         return whoWinsMap.get(userImput).get(computerImput);
     }
-
     public int ScoreCounter(UserSelection userImput,UserSelection computerImput) {
 
         if(whoWinsMap.get(userImput).get(computerImput).equals(Winner.COMPUTER)){

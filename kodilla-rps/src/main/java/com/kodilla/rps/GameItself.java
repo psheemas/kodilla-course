@@ -10,7 +10,6 @@ public class GameItself {
         this.playerName = playerName;
         this.numberOfRounds = numberOfRounds;
     }
-
     public String getPlayerName() {
         return playerName;
     }
@@ -66,7 +65,5 @@ public class GameItself {
 
             rounds = rounds +1;
         }
-
     }
-
 }
