@@ -1,6 +1,7 @@
 package com.kodilla.rps;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameItself {
     String playerName;
@@ -23,16 +24,17 @@ public class GameItself {
         int computerPoints = 0;
         int userPoints = 0;
         int rounds = 1;
-        boolean end = false;
 
-        OutputScreen outputScreen = new OutputScreen();
+        ArrayList<UserSelection> UserSelection = new ArrayList<>();
+        UserSelection.add(com.kodilla.rps.UserSelection.ROCK);
+        UserSelection.add(com.kodilla.rps.UserSelection.PAPER);
+        UserSelection.add(com.kodilla.rps.UserSelection.SCISSORS);
+        UserSelection.add(com.kodilla.rps.UserSelection.LIZARD);
+        UserSelection.add(com.kodilla.rps.UserSelection.SPOCK);
 
-        ArrayList<String> znaczki = new ArrayList<>();
-        znaczki.add("Rock");
-        znaczki.add("Paper");
-        znaczki.add("Scissors");
-        znaczki.add("Lizard");
-        znaczki.add("Spock");
+
+        UserInputScreen userInputScreen = new UserInputScreen();
+
 
         for(int r=0; r<getNumberOfRounds();r++){
             RpsRandom rpsRandom = new RpsRandom();
@@ -40,22 +42,32 @@ public class GameItself {
 
             System.out.println("Current round: " + rounds);
             System.out.println(" ");
-            System.out.println("Ok " + getPlayerName() + " choose");
+            System.out.println("Ok " + getPlayerName() + " please make Your choice");
             System.out.println(" ");
 
-            String userChosenInput = znaczki.get(Integer.parseInt(outputScreen.OptionsScreen())-1);
-            System.out.println("User chose: " + userChosenInput);
+            UserSelection userChoice = userInputScreen.OptionsScreen();
+            if(userChoice.equals(com.kodilla.rps.UserSelection.QUIT)){
+                System.exit(0);
+            }
+            if(userChoice.equals(com.kodilla.rps.UserSelection.NEW_GAME)){
+                System.exit(0);
+                new RpsRunner();
+            }
+            System.out.println("User chose: " + userChoice);
 
 
-            Dependencies comapreShit = new Dependencies(userChosenInput, znaczki.get(computerMove));
-            comapreShit.compare();
+            Dependencies compareInputs = new Dependencies();
+            compareInputs.DependenciesChecker();
+            System.out.println("PC chose: " + UserSelection.get(computerMove));
+            System.out.println("Result: " + compareInputs.whoWin(userChoice,UserSelection.get(computerMove)));
+            compareInputs.ScoreCounter(userChoice,UserSelection.get(computerMove));
 
-            System.out.println("PC chose: " + znaczki.get(computerMove));
 
-            computerPoints = computerPoints + comapreShit.getScorexForPc();
-            userPoints = userPoints + comapreShit.getScorexForUsr();
 
-            outputScreen.ScoreScreen(computerPoints,userPoints);
+            computerPoints = computerPoints + compareInputs.getScoreForPc();
+            userPoints = userPoints + compareInputs.getScoreForUsr();
+
+            userInputScreen.ScoreScreen(computerPoints,userPoints);
 
             rounds = rounds +1;
         }
