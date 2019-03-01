@@ -1,7 +1,6 @@
 package com.kodilla.rps;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class GameItself {
     String playerName;
@@ -32,9 +31,7 @@ public class GameItself {
         UserSelection.add(com.kodilla.rps.UserSelection.LIZARD);
         UserSelection.add(com.kodilla.rps.UserSelection.SPOCK);
 
-
         UserInputScreen userInputScreen = new UserInputScreen();
-
 
         for(int r=0; r<getNumberOfRounds();r++){
             RpsRandom rpsRandom = new RpsRandom();
@@ -50,19 +47,17 @@ public class GameItself {
                 System.exit(0);
             }
             if(userChoice.equals(com.kodilla.rps.UserSelection.NEW_GAME)){
-                System.exit(0);
-                new RpsRunner();
+                RpsRunner.playGame();
             }
             System.out.println("User chose: " + userChoice);
 
-
             Dependencies compareInputs = new Dependencies();
             compareInputs.DependenciesChecker();
+
             System.out.println("PC chose: " + UserSelection.get(computerMove));
             System.out.println("Result: " + compareInputs.whoWin(userChoice,UserSelection.get(computerMove)));
+
             compareInputs.ScoreCounter(userChoice,UserSelection.get(computerMove));
-
-
 
             computerPoints = computerPoints + compareInputs.getScoreForPc();
             userPoints = userPoints + compareInputs.getScoreForUsr();

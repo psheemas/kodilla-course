@@ -5,12 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Dependencies {
-    UserSelection userImput;
-    UserSelection computerImput;
     int scoreForPc = 0;
     int scoreForUsr =0;
 
-    //user,computer,winner
     Map<UserSelection, Map<UserSelection, Winner>> whoWinsMap = new HashMap<>();
 
     public int getScoreForPc() {
@@ -68,7 +65,6 @@ public class Dependencies {
 
     public Winner whoWin(UserSelection userImput,UserSelection computerImput){
         return whoWinsMap.get(userImput).get(computerImput);
-
     }
 
     public int ScoreCounter(UserSelection userImput,UserSelection computerImput) {

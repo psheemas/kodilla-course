@@ -8,9 +8,9 @@ public class UserInputScreen {
     public String MainMenuScreen(){
             System.out.println("Hello in Rock Paper Scissors Lizard Spock!");
             System.out.println("Your name please: ");
-            String playerName = scanner.next();
+            String playerName = scanner.nextLine();
             return playerName;
-        }
+    }
 
     public UserSelection OptionsScreen() {
         while (true) {
