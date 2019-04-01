@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-02-13T08:13:57" hostname="DESKTOP-247TMIN" time="0.006">
+<testsuite name="com.kodilla.testing.forum.ForumTestSuite" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-04-01T19:57:24" hostname="DESKTOP-247TMIN" time="0.011">
   <properties/>
   <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.002"/>
-  <testcase name="testAddPost" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
+  <testcase name="testAddPost" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
   <testcase name="testCaseRealName" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
-  <testcase name="testCaseUsername" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
+  <testcase name="testCaseUsername" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
   <testcase name="testGetPost" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
-  <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
-  <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
+  <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.002"/>
+  <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
   <testcase name="testRemovePost" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
-  <testcase name="testGetComment" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.001"/>
+  <testcase name="testGetComment" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
   <testcase name="testAddComment" classname="com.kodilla.testing.forum.ForumTestSuite" time="0.0"/>
   <system-out><![CDATA[Test Suite: begin
 Test Case:begin
