@@ -5,7 +5,7 @@ public class ProductOrderServiceMain {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
         OrderRequest orderRequest = orderRequestRetriever.retrieve();
 
-        ProductOrderService productOrderService = new ProductOrderService(new InformationService(),new OrderedItems(),new OrderWarehouse());
+        ProductOrderService productOrderService = new ProductOrderService(new MailInformationService(),new OrderedItems(),new OrderWarehouseService());
         productOrderService.process(orderRequest);
 
     }

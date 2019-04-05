@@ -2,24 +2,24 @@ package com.kodilla.good.patterns.challenges;
 
 public class ProductOrderService {
 
-    private InformationService informationService;
+    private MailInformationService mailInformationService;
     private OrderedItems orderedItems;
-    private OrderWarehouse orderWarehouse;
+    private OrderWarehouseService orderWarehouseService;
 
-    public ProductOrderService(final InformationService informationService,
+    public ProductOrderService(final MailInformationService mailInformationService,
                                final OrderedItems orderedItems,
-                               final OrderWarehouse orderWarehouse) {
-        this.informationService = informationService;
+                               final OrderWarehouseService orderWarehouseService) {
+        this.mailInformationService = mailInformationService;
         this.orderedItems = orderedItems;
-        this.orderWarehouse = orderWarehouse;
+        this.orderWarehouseService = orderWarehouseService;
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
         boolean isOrdered = orderedItems.buyNow(orderRequest.getUser(), orderRequest.getItem());
 
         if (isOrdered) {
-            informationService.inform(orderRequest.getUser());
-            orderWarehouse.createOrder(orderRequest.getUser(), orderRequest.getItem());
+            mailInformationService.inform(orderRequest.getUser());
+            orderWarehouseService.createOrder(orderRequest.getUser(), orderRequest.getItem());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);
