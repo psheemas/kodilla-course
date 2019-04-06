@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.food2door;
 
-
 public class VegetablesAndFruits {
     private Integer numberOfPieces;
     private String orderedItem;
@@ -12,9 +11,7 @@ public class VegetablesAndFruits {
 
     @Override
     public String toString() {
-        return "VegetablesAndFruits{" +
-                "numberOfPieces=" + numberOfPieces +
-                ", orderedItem='" + orderedItem + '\'' +
-                '}';
+        return  "Product = " + orderedItem +
+                " | Available pieces = " + numberOfPieces + "\n";
     }
 }

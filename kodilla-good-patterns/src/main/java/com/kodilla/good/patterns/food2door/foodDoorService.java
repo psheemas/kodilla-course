@@ -2,11 +2,13 @@ package com.kodilla.good.patterns.food2door;
 
 public class foodDoorService {
     public static void main(String[] args) {
-        AvailableFreshProducts availableFreshProducts = new AvailableFreshProducts();
-        FoodProducerCompany foodProducerCompany = new FoodProducerCompany("HealthyShop",availableFreshProducts.getItemsAvailable());
-
-        System.out.println(foodProducerCompany.orderList());
-        System.out.println(foodProducerCompany.companyName());
-        foodProducerCompany.process();
+        System.out.println("Hello in Frajsko");
+        System.out.println("Please choose Your Favorite Producer");
+        UserInput userInput = new UserInput();
+        ProducentsInterface selectedProducer = userInput.OptionsScreen();
+        System.out.println("Here is the List of available products for " + selectedProducer.companyName());
+        System.out.println("Please choose what You want to order and contact with us: " + selectedProducer.contact());
+        System.out.println(selectedProducer.orderList());
+        selectedProducer.process();
     }
 }
