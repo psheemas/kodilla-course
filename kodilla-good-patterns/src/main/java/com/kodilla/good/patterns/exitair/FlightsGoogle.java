@@ -5,8 +5,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FlightsGoogle {
+    AvailableConnections availableConnections = new AvailableConnections();
     public void flightGoogle() {
-        AvailableConnections availableConnections = new AvailableConnections();
         System.out.println("Flight from Warsaw to Gdańsk via Katowice");
 
         Set<Flight> departureCity = availableConnections.getListOfFlights().stream()
@@ -31,5 +31,20 @@ public class FlightsGoogle {
             if (midFlight.getDestinationCity() == "Gdańsk")
                 System.out.println(midFlight);
         }
+    }
+    public void findFlightFrom(String city){
+        System.out.println("Flights from: " + city);
+        System.out.println(availableConnections.getListOfFlights().stream()
+                .filter(listOfFlights -> listOfFlights.getDestinationCity() == "Warszawa")
+                .map(listOfFlights -> listOfFlights.getFlightName())
+                .collect(Collectors.toSet()));
+    }
+
+    public void findFlightsTo(String city){
+        System.out.println("Flights to: " + city);
+        System.out.println(availableConnections.getListOfFlights().stream()
+                .filter(listOfFlights -> listOfFlights.getDestinationCity() == "Gdańsk")
+                .map(listOfFlights -> listOfFlights.getFlightName())
+                .collect(Collectors.toSet()));
     }
 }
