@@ -16,15 +16,6 @@ public class Product {
     public Product(String name) {
         this.name = name;
     }
-    @ManyToOne
-    @JoinColumn(name = "ITEM_ID")
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
 
     @Id
     @GeneratedValue
