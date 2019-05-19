@@ -111,10 +111,6 @@ public class InvoiceDaoTestSuite {
         item2.setProduct(product2);
 
         //When
-        productDao.save(product1);
-        productDao.save(product2);
-        itemDao.save(item1);
-        itemDao.save(item2);
         invoiceDao.save(invoice1);
         int id = invoice1.getId();
 
