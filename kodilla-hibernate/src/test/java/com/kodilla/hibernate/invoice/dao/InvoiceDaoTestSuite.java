@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
@@ -111,14 +113,16 @@ public class InvoiceDaoTestSuite {
         item2.setProduct(product2);
 
         //When
+        productDao.save(product1);
+        productDao.save(product2);
         invoiceDao.save(invoice1);
+        itemDao.save(item1);
+        itemDao.save(item2);
+
         int id = invoice1.getId();
 
         //Then
        Assert.assertNotEquals(2,id);
-
-        //CleanUp
-        invoiceDao.deleteById(id);
 
     }
 
