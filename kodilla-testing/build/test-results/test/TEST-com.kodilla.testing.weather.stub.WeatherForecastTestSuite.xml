@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.weather.stub.WeatherForecastTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-01T19:57:24" hostname="DESKTOP-247TMIN" time="0.001">
+<testsuite name="com.kodilla.testing.weather.stub.WeatherForecastTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-12T18:39:49" hostname="mbp-przemysaw.home" time="0.0">
   <properties/>
-  <testcase name="testCalculateForecastWithStub" classname="com.kodilla.testing.weather.stub.WeatherForecastTestSuite" time="0.001"/>
+  <testcase name="testCalculateForecastWithStub" classname="com.kodilla.testing.weather.stub.WeatherForecastTestSuite" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
